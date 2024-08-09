@@ -11,6 +11,10 @@ class AuthService {
   static logout = () => {
     return HTTPService.get('http://127.0.0.1:8000/api/v1/auth/logout')
   }
+
+  static isAuthenticated = () => {
+    return HTTPService.get('http://127.0.0.1:8000/api/v1/auth/is-authenticated')
+  }
 }
 
 export { AuthService }
