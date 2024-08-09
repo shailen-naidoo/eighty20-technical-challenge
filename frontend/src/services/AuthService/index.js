@@ -2,10 +2,14 @@ import { HTTPService } from "../HTTPservice"
 
 class AuthService {
   static login = ({ username, password }) => {
-    return HTTPService.post('http://localhost:8000/api/v1/auth/login/', {
+    return HTTPService.post('http://127.0.0.1:8000/api/v1/auth/login/', {
       username,
       password,
-    }, { withCredentials: true })
+    })
+  }
+
+  static logout = () => {
+    return HTTPService.get('http://127.0.0.1:8000/api/v1/auth/logout')
   }
 }
 
