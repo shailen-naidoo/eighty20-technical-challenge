@@ -1,8 +1,7 @@
-import './App.css'
-
-function App() {
+function Login() {
   return (
     <>
+      <h1>Eighty20 Technical Challenge Login page</h1>
       <label htmlFor="">Username</label>
       <input name="Username" type="text" />
       <label htmlFor="">Password</label>
@@ -12,4 +11,4 @@ function App() {
   )
 }
 
-export default App
+export { Login }
