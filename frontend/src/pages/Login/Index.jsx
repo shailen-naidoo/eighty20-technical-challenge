@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import { AuthService } from "../../services/AuthService"
 import { useNavigate } from "react-router-dom"
 
@@ -8,6 +8,11 @@ function Login() {
   const [password, setPassword] = useState('')
 
   const disableLoginButton = useMemo(() => !(username && password), [username, password])
+
+  useEffect(() => {
+    AuthService.isAuthenticated()
+      .then(() => navigate('/'))
+  }, [navigate])
 
   function login() {
     return AuthService.login({ username, password })
