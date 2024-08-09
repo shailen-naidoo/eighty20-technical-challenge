@@ -11,7 +11,7 @@ function Home() {
       .then((res) => setUser(res.data.user))
       .catch(() => navigate('/login'))
 
-  })
+  }, [navigate])
 
   function logout() {
     return AuthService.logout()
