@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "11d53d54-52b5-47ad-863b-394d0a337482",
+		"_postman_id": "f9be9cd5-926b-4f5c-aea0-bbdc48e69379",
 		"name": "Eighty20",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "2370647"
@@ -61,6 +61,32 @@
 						"v1",
 						"auth",
 						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Auth - Is Authenticated",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/auth/is-authenticated/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"is-authenticated",
+						""
 					]
 				}
 			},
