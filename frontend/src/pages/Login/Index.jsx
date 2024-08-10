@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react"
 import { AuthService } from "../../services/AuthService"
 import { useNavigate } from "react-router-dom"
+import { ROUTES } from "../../router"
 
 function Login() {
   const navigate = useNavigate()
@@ -11,12 +12,12 @@ function Login() {
 
   useEffect(() => {
     AuthService.isAuthenticated()
-      .then(() => navigate('/'))
+      .then(() => navigate(ROUTES.HOME))
   }, [navigate])
 
   function login() {
     return AuthService.login({ username, password })
-      .then(() => navigate('/'))
+      .then(() => navigate(ROUTES.HOME))
       .catch(() => alert('Your credentials are not valid'))
   }
 

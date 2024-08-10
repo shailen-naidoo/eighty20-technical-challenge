@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import { AuthService } from "../services/AuthService"
 import { useEffect, useState } from "react"
+import { ROUTES } from "../router"
 
 function Home() {
   const navigate = useNavigate()
@@ -9,13 +10,13 @@ function Home() {
   useEffect(() => {
     AuthService.isAuthenticated()
       .then((res) => setUser(res.data.user))
-      .catch(() => navigate('/login'))
+      .catch(() => navigate(ROUTES.LOGIN))
 
   }, [navigate])
 
   function logout() {
     return AuthService.logout()
-      .then(() => navigate('/login'))
+      .then(() => navigate(ROUTES.LOGIN))
   }
 
   return (
