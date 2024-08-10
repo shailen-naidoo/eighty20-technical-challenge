@@ -16,7 +16,7 @@ function setup_environment() {
 
   ### SETUP POERTY PACKAGE MANAGER & INSTALL PACKAGES
 
-  curl -sSL https://install.python-poetry.org | python3 - # Install poetry python package manager
+  pip install poetry # Install poetry python package manager
   poetry config virtualenvs.create false # Prevent poetry from creating a virtualenv as I want to use pyenv for that.
   poetry install --no-root # Install the project dependencies
 
