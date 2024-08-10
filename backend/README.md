@@ -35,3 +35,7 @@ After you have followed the installation of the dependencies step. The next step
 8. Then save your information
 
 If all goes well, you should have successfully setup the Django backend for use by the frontend.
+
+## Postman
+
+I have also committed the Postman collection so you can test the APIs for the backend using the Postman environment. `Eighty20.postman_collection.json`
