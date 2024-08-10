@@ -9,13 +9,14 @@ function Home() {
 
   useEffect(() => {
     AuthService.isAuthenticated()
-      .then((res) => setUser(res.data.user))
       .catch(() => navigate(ROUTES.LOGIN))
+      .then((res) => setUser(res.data.user))
 
   }, [navigate])
 
   function logout() {
     return AuthService.logout()
+      .catch(() => alert('Logout was not successful! Please try again!'))
       .then(() => navigate(ROUTES.LOGIN))
   }
 

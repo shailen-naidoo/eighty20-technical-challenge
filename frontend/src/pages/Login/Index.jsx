@@ -17,8 +17,8 @@ function Login() {
 
   function login() {
     return AuthService.login({ username, password })
-      .then(() => navigate(ROUTES.HOME))
       .catch(() => alert('Your credentials are not valid'))
+      .then(() => navigate(ROUTES.HOME))
   }
 
   return (
