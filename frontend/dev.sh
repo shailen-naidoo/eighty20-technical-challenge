@@ -5,6 +5,7 @@ fi
 function setup_environment() {
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash # Installs nvm
   nvm install # install the node version of the project
+  npm i
 }
 
 function run_vite_server() {
