@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useState } from "react"
-import { AuthService } from "../../services/AuthService"
 import { useNavigate } from "react-router-dom"
-import { ROUTES } from "../../router"
+import { LoginViewModel } from "./vm"
 
 function Login() {
   const navigate = useNavigate()
@@ -11,14 +10,11 @@ function Login() {
   const disableLoginButton = useMemo(() => !(username && password), [username, password])
 
   useEffect(() => {
-    AuthService.isAuthenticated()
-      .then(() => navigate(ROUTES.HOME))
+    LoginViewModel.methods.isAuthenticated({ navigate })
   }, [navigate])
 
   function login() {
-    return AuthService.login({ username, password })
-      .catch(() => alert('Your credentials are not valid'))
-      .then(() => navigate(ROUTES.HOME))
+    return LoginViewModel.methods.login({ username, password, navigate })
   }
 
   return (
