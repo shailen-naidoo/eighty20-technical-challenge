@@ -19,6 +19,8 @@ In order for the reviewer to the run this project successfully on their local ma
 
 I have written a shell command to assist with the setup process. You can `source dev.sh` and run `setup_environment` and in theory it should handle all the installation steps for you. It works on my environment but it is most likely the case that you might experience issues with the `setup_environment` command. This is why I provided the dependencies directly so you could troubleshoot or even use your alternatives.
 
+The reality is that you are probably going to have to run the `setup_environment` command a few times as there are certain things that I could not account for right now.
+
 ## Running the application
 
 After you have followed the installation of the dependencies step. The next step is to get Django running to serve the APIs to the frontend.
