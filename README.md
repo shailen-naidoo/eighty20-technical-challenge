@@ -2,7 +2,7 @@
 
 Hello reviewer, I hope you are well!
 
-This is the repo that contains all the source for the technical challenge that I was tasked to produce for the Fullstack position at Eighty20. This repo is somewhat a monorepo as it contains both the backend and frontend source code.
+This is the repo that contains all the source code for the technical challenge that I was tasked to produce for the Fullstack position at Eighty20. This repo is somewhat a monorepo as it contains both the backend and frontend source code.
 
 The setup instructions are found in both the `/backend` and `/fronted` folder. You can navigate to those folders and you read the `README` files to understand what you need to do to start the setup or reviewal process.
 
