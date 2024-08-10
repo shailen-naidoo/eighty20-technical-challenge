@@ -3,12 +3,12 @@ import axios from 'axios'
 axios.defaults.withCredentials = true
 
 class HTTPService {
-  static post = (url, data, config) => {
-    return axios.post(url, data, config)
+  static post = (url, data) => {
+    return axios.post(url, data)
   }
 
-  static get = (url, config) => {
-    return axios.get(url, config)
+  static get = (url) => {
+    return axios.get(url)
   } 
 }
 
