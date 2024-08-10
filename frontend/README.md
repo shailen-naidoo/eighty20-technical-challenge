@@ -4,7 +4,7 @@ This is the React frontend  for the Eighty20 Technical Challenge.
 
 # Setup
 
-> > I am making several assumptions on the reviewer. I assume that the reviewer is familiar with Linux, MacOS, JavaScript, React + Vite  and etc. If anything does go wrong during the setup process, I simply could not account for the unknowns on the reviewers side.
+> I am making several assumptions on the reviewer. I assume that the reviewer is familiar with Linux, MacOS, JavaScript, React + Vite  and etc. If anything does go wrong during the setup process, I simply could not account for the unknowns on the reviewers side.
 
 ## Install dependencies
 
