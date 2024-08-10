@@ -11,10 +11,12 @@ class IsAuthenticatedView(APIView):
                 'username': request.user.username,
                 'favorite_pokemon': request.user.favorite_pokemon
             }
+
             return Response(
                 {'is_authenticated': request.user.is_authenticated, 'user': user_data},
                 status=status.HTTP_200_OK
             )
+
         else:
             return Response(
                 {'is_authenticated': request.user.is_authenticated, 'user': None},
