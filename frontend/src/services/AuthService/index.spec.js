@@ -6,7 +6,7 @@ vi.mock('axios')
 
 describe('Test AuthService', () => {
 
-  describe('Test login method', () => {
+  describe('.login', () => {
 
     describe('Edge cases', () => {
 
@@ -25,6 +25,7 @@ describe('Test AuthService', () => {
     })
 
     describe('Happy cases', () => {
+
       test('If the login method passes should return user object', async () => {
         // 1. SETUP
         axios.post.mockResolvedValueOnce({ data: { user: {} } })
@@ -36,6 +37,41 @@ describe('Test AuthService', () => {
         await expect(authLoginCall)
           .resolves
           .toEqual({ data: { user: {} } })
+      })
+    })
+  })
+
+  describe('.logout', () => {
+
+    describe('Edge cases', () => {
+
+      test('If the logout method fails should raise an error at the call site', async () => {
+          // 1. SETUP
+          axios.get.mockRejectedValueOnce(new Error('Something broke on the server'))
+
+          // 2. SETUP
+          const authLogoutCall = AuthService.logout()
+
+          // 3. ASSERT
+          await expect(authLogoutCall)
+            .rejects
+            .toEqual(new Error('Something broke on the server'))
+      })
+    })
+
+    describe('Happy cases', () => {
+
+      test('If the logout method fails should raise an error at the call site', async () => {
+        // 1. SETUP
+        axios.get.mockResolvedValueOnce('OK')
+
+        // 2. SETUP
+        const authLogoutCall = AuthService.logout()
+
+        // 3. ASSERT
+        await expect(authLogoutCall)
+          .resolves
+          .toBe('OK')
       })
     })
   })
