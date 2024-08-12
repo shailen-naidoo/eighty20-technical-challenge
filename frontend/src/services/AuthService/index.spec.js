@@ -1,8 +1,10 @@
-import { describe, expect, test, vi } from 'vitest'
+import { beforeEach, describe, expect, test, vi } from 'vitest'
 import axios from 'axios'
 import { AuthService } from '.'
 
 vi.mock('axios')
+
+beforeEach(vi.resetAllMocks)
 
 describe('Test AuthService', () => {
 

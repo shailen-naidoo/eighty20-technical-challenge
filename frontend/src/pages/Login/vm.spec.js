@@ -1,9 +1,11 @@
-import { describe, expect, test, vi } from "vitest";
+import { beforeEach, describe, expect, test, vi } from "vitest";
 import axios from 'axios'
 import { LoginViewModel } from "./vm";
 
 vi.mock('axios')
 vi.mock('react-router-dom')
+
+beforeEach(vi.resetAllMocks)
 
 describe('Test LoginViewModel', () => {
 
