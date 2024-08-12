@@ -51,7 +51,7 @@ describe('Test AuthService', () => {
           // 1. SETUP
           axios.get.mockRejectedValueOnce(new Error('Something broke on the server'))
 
-          // 2. SETUP
+          // 2. ACTION
           const authLogoutCall = AuthService.logout()
 
           // 3. ASSERT
@@ -67,7 +67,7 @@ describe('Test AuthService', () => {
         // 1. SETUP
         axios.get.mockResolvedValueOnce('OK')
 
-        // 2. SETUP
+        // 2. ACTION
         const authLogoutCall = AuthService.logout()
 
         // 3. ASSERT
@@ -86,7 +86,7 @@ describe('Test AuthService', () => {
           // 1. SETUP
           axios.get.mockRejectedValueOnce(new Error('Something broke on the server'))
 
-          // 2. SETUP
+          // 2. ACTION
           const authIsAuthenticatedCall = AuthService.isAuthenticated()
 
           // 3. ASSERT
@@ -99,7 +99,7 @@ describe('Test AuthService', () => {
         // 1. SETUP
         axios.get.mockRejectedValueOnce({ data: { is_authenticated: false, user: null } })
 
-        // 2. SETUP
+        // 2. ACTION
         const authIsAuthenticatedCall = AuthService.isAuthenticated()
 
         // 3. ASSERT
@@ -115,7 +115,7 @@ describe('Test AuthService', () => {
         // 1. SETUP
         axios.get.mockResolvedValueOnce({ data: { is_authenticated: true, user: {} }})
 
-        // 2. SETUP
+        // 2. ACTION
         const authIsAuthenticatedCall = AuthService.isAuthenticated()
 
         // 3. ASSERT
