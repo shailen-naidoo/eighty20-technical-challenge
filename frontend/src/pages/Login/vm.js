@@ -3,11 +3,11 @@ import { AuthService } from "../../services/AuthService"
 
 class LoginViewModel {
   static methods = {
-    isAuthenticated(ctx) {
+    async isAuthenticated(ctx) {
       return AuthService.isAuthenticated()
         .then(() => ctx.navigate(ROUTES.HOME))
     },
-    login(ctx) {
+    async login(ctx) {
       return AuthService.login({
         username: ctx.username,
         password: ctx.password
