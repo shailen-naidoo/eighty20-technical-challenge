@@ -12,7 +12,12 @@ function run_vite_server() {
   npm run dev
 }
 
+function run_unit_tests() {
+  npm run test
+}
+
 echo ""
 echo "setup_environment - Run this command to setup everything needed to run the React frontend"
 echo "run_vite_server - Run this command to run the Vite server"
+echo "run_unit_tests - Run this command to run the Vitest testing framework"
 echo ""

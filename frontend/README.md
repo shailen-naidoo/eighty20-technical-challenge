@@ -30,3 +30,8 @@ After you have followed the installation of the dependencies step. The next step
 7. You can try and break the application but it should pass the acceptance criteria
 
 If all goes well, you should have successfully setup the React frontend for use by the backend
+
+## Running the unit tests
+
+1. Run `source dev.sh`
+2. Run the `run_unit_tests` command
