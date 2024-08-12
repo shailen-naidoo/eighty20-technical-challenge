@@ -61,7 +61,7 @@ describe('Test AuthService', () => {
 
     describe('Happy cases', () => {
 
-      test('If the logout method fails should raise an error at the call site', async () => {
+      test('If the logout method passes should return an OK status', async () => {
         // 1. SETUP
         axios.get.mockResolvedValueOnce('OK')
 
@@ -72,6 +72,54 @@ describe('Test AuthService', () => {
         await expect(authLogoutCall)
           .resolves
           .toBe('OK')
+      })
+    })
+  })
+
+  describe('.isAuthenticated', () => {
+
+    describe('Edge cases', () => {
+
+      test('If the isAuthenticated method fails should raise an error at the call site', async () => {
+          // 1. SETUP
+          axios.get.mockRejectedValueOnce(new Error('Something broke on the server'))
+
+          // 2. SETUP
+          const authIsAuthenticatedCall = AuthService.isAuthenticated()
+
+          // 3. ASSERT
+          await expect(authIsAuthenticatedCall)
+            .rejects
+            .toEqual(new Error('Something broke on the server'))
+      })
+
+      test('If user is not authenticated then should return false', async () => {
+        // 1. SETUP
+        axios.get.mockRejectedValueOnce({ data: { is_authenticated: false, user: null } })
+
+        // 2. SETUP
+        const authIsAuthenticatedCall = AuthService.isAuthenticated()
+
+        // 3. ASSERT
+        await expect(authIsAuthenticatedCall)
+          .rejects
+          .toEqual({ data: { is_authenticated: false, user: null } })
+      })
+    })
+
+    describe('Happy cases', () => {
+
+      test('If the isAuthenticated method passes should return the authenticated status of the user and the user object', async () => {
+        // 1. SETUP
+        axios.get.mockResolvedValueOnce({ data: { is_authenticated: true, user: {} }})
+
+        // 2. SETUP
+        const authIsAuthenticatedCall = AuthService.isAuthenticated()
+
+        // 3. ASSERT
+        await expect(authIsAuthenticatedCall)
+          .resolves
+          .toEqual({ data: { is_authenticated: true, user: {} }})
       })
     })
   })
